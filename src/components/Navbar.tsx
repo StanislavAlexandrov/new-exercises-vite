@@ -1,6 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar({ fixed }) {
@@ -44,8 +43,16 @@ export default function Navbar({ fixed }) {
                     >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                             <Link className="nav-item" to="/">
-                                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                                    HOME 🏡
+                                <a className="px-3 py-2 flex  text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                                    </svg>{' '}
+                                    HOME
                                 </a>
                             </Link>
                             <Link to="articles">
@@ -61,6 +68,16 @@ export default function Navbar({ fixed }) {
                             <Link to="nounphrases">
                                 <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
                                     NOUN PHRASES
+                                </a>
+                            </Link>
+                            <Link to="tvshows">
+                                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    TV SHOWS
+                                </a>
+                            </Link>
+                            <Link to="typedquestions">
+                                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    TYPED QUESTIONS
                                 </a>
                             </Link>
                         </ul>

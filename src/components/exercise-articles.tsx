@@ -29,8 +29,8 @@ const ExerciseArticles = () => {
     };
 
     return (
-        <div className="exercise-articles">
-            <span>
+        <div className="exercise-articles flex flex-col text-3xl m-2 justify-center w-full ">
+            <span className="">
                 {newSentence?.map((word) =>
                     word === 'a' ||
                     word === 'the' ||
@@ -49,7 +49,7 @@ const ExerciseArticles = () => {
                     )
                 )}
             </span>
-            <span>
+            <span className="mt-8">
                 {newSentence?.map((word) =>
                     word === 'a' ||
                     word === 'the' ||
@@ -63,7 +63,7 @@ const ExerciseArticles = () => {
                     )
                 )}
             </span>
-            <div>
+            <div className="flex m-auto mt-8 flex-col">
                 <input
                     type="text"
                     placeholder="enter sentence here"
