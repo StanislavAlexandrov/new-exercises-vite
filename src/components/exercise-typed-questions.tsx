@@ -91,25 +91,27 @@ export default function TypedQuestions() {
             ) : undefined}
 
             {!showPicker ? (
-                <>
-                    <h3>
+                <div className="answers">
+                    <h3 className="mt-8">
                         current step: {currentStep + 1} of {numberQuestions}
                     </h3>
-                    <h1>
+                    <h1 className="mt-8 text-2xl font-bold">
                         {questions[currentStep].question}
                         {/* THIS GETS THE FIRST LETTER. TO BE USED IN THE FUTURE */}
                         {/* {"(" + currentWord[0] + "-)"} */}
                     </h1>
                     <input
-                        className="guessInput  text-gray-700 text-sm font-bold mb-2"
+                        className="guessInput bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500  w-1/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-8"
                         type="text"
                         value={currentGuess}
                         onChange={handleInput}
                         onKeyDown={handleSpace}
                     />
-                    <div className="highlight_right">
-                        <h1>{correctGuess ? 'correct' : undefined}</h1>
-                        <h2>
+                    <div className="highlight_right ">
+                        <h1 className="bg-green-500 m-auto w-1/3 rounded-md">
+                            {correctGuess ? 'correct' : undefined}
+                        </h1>
+                        <h2 className="text-xl">
                             {correctGuess
                                 ? questions[currentStep - 1]?.answer + ': '
                                 : undefined}
@@ -119,7 +121,7 @@ export default function TypedQuestions() {
                                 : undefined}
                         </h2>
                     </div>
-                </>
+                </div>
             ) : undefined}
         </div>
     );

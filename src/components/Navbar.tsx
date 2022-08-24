@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Navbar({ fixed }) {
+export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <>
