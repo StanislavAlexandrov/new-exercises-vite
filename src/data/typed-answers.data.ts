@@ -1,6 +1,7 @@
 interface IData {
     question: string;
     answer: string;
+    used?: boolean;
 }
 
 const DATA: IData[] = [

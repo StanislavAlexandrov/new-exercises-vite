@@ -2,6 +2,7 @@ interface Words {
     word: string;
     positionUp: boolean;
     id: number;
+    used?: boolean;
 }
 
 const wordsDefault: Words[] = [

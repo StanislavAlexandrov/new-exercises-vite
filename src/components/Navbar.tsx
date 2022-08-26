@@ -80,6 +80,11 @@ export default function Navbar() {
                                     TYPED QUESTIONS
                                 </a>
                             </Link>
+                            <Link to="updown">
+                                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    UP DOWN
+                                </a>
+                            </Link>
                         </ul>
                     </div>
                 </div>

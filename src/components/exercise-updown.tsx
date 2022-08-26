@@ -51,6 +51,7 @@ export default function UpDown() {
             <div className="">
                 <div className="flex flex-wrap justify-center items-center mt-6 max-w-6xl ">
                     {/* //if it's used then don't show */}
+                    {/* //the TS issue is that I need to extend the react button type*/}
                     {upWords.map((element, id) =>
                         element.positionUp && !element.used ? (
                             <button

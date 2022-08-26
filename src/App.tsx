@@ -7,6 +7,7 @@ import ExerciseToBe from './components/exercise-tobe';
 import ExerciseNounPhrases from './components/exercise-noun-phrases';
 import TvShows from './components/exercise-tvmaze';
 import TypedQuestions from './components/exercise-typed-questions';
+import UpDown from './components/exercise-updown';
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                         path="/typedquestions"
                         element={<TypedQuestions />}
                     ></Route>
+                    <Route path="/updown" element={<UpDown />}></Route>
                 </Routes>
             </Router>
         </div>
