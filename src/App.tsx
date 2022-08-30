@@ -1,4 +1,6 @@
+import React from 'react';
 import './App.css';
+
 import Navbar from './components/Navbar';
 import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import HomePage from './pages/home.page';
@@ -12,7 +14,7 @@ import UpDown from './components/exercise-updown';
 function App() {
     return (
         <div className="App">
-            <Router>
+            <Router basename="/new-exercises-vite">
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<HomePage />}></Route>
