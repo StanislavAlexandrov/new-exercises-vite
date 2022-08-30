@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 
 const ExerciseJumble = () => {
     const [myInput, setMyInput] = useState('');
-
-    const handleChange = (event: React.ChangeEventHandler) => {
+    //why do we need HTMLInputElement here?
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMyInput(event.target.value);
     };
 
-    function shuffle(array: []) {
+    function shuffle(array: string[]) {
         let currentIndex = array.length,
             randomIndex;
 
@@ -28,10 +28,11 @@ const ExerciseJumble = () => {
     }
 
     function sentenceToArray(sentence: string) {
+        console.log(sentence.split(' '));
         return sentence.split(' ');
     }
 
-    const sentenceJumbler = (sentence: string[]) => {
+    const sentenceJumbler = (sentence: string) => {
         let readySentence = shuffle(sentenceToArray(sentence));
 
         return readySentence.map((element, i) => (

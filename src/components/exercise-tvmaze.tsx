@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import shuffleArray from '../utils/shuffleArray';
 
 export default function TvShows() {
     //? otherwise it gets assigned to 'never'?
@@ -12,7 +13,7 @@ export default function TvShows() {
     useEffect(() => {
         fetch('https://api.tvmaze.com/shows')
             .then((data) => data.json())
-            .then((data) => setSchedule(data))
+            .then((data) => setSchedule(shuffleArray(data)))
             .then(() => setIsLoading(false))
             .catch(() => setIsError(true));
     }, []);

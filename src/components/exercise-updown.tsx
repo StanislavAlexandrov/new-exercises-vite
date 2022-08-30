@@ -28,18 +28,17 @@ export default function UpDown() {
     );
 
     return (
-        <div className="flex flex-col items-center justify-center  px-10 ">
+        <div className="h-screen bg-green-100 flex flex-col ">
             {/* {tripleCheck.length > 2 ? <h1>Please start again.</h1> : null} */}
-            <div className="half-height flex items-center">
-                <div className=" max-w-md">
+            <div className="bg-red-50 h-1/2 w-[100%] md:w-screen flex justify-center items-center">
+                <div className=" flex-wrap w-1/2  ">
                     {upWords.map((element, id) =>
                         !element.positionUp ? (
                             <button
                                 key={id}
-                                whileTap={{ y: 20 }}
-                                id={id}
+                                id={id.toString()}
                                 onClick={() => flipItem(id)}
-                                className="text-2xl bg-green-200 m-3 rounded-lg p-3 "
+                                className="text-2xl m-2"
                             >
                                 {element.word}
                             </button>
@@ -47,17 +46,17 @@ export default function UpDown() {
                     )}
                 </div>
             </div>
-            ...
-            <div className="">
-                <div className="flex flex-wrap justify-center items-center mt-6 max-w-6xl ">
+
+            <div className="bg-yellow-50 h-1/2">
+                <div className="">
                     {/* //if it's used then don't show */}
                     {/* //the TS issue is that I need to extend the react button type*/}
                     {upWords.map((element, id) =>
                         element.positionUp && !element.used ? (
                             <button
                                 key={id}
-                                id={id}
-                                className="bubbly-button text-2xl m-2 rounded-lg    "
+                                id={id.toString()}
+                                className=" m-2    "
                                 onClick={() => flipItem(id)}
                             >
                                 {element.word}
