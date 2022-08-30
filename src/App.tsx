@@ -12,7 +12,7 @@ import UpDown from './components/exercise-updown';
 function App() {
     return (
         <div className="App">
-            <Router basename="/new-exercises-vite" />
+            <Router>
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<HomePage />}></Route>
