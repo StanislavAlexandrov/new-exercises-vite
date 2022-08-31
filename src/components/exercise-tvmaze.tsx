@@ -1,6 +1,4 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
-
 import shuffleArray from '../utils/shuffleArray';
 
 export default function TvShows() {
