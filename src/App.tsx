@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route, Link, HashRouter as Router } from 'react-router-dom';
 import HomePage from './pages/home.page';
 import ExerciseArticles from './components/exercise-articles';
 import ExerciseToBe from './components/exercise-tobe';
