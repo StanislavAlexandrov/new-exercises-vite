@@ -24,10 +24,9 @@ const myPics: Record<string, string> = PICS;
 
 //TODO: for next use fs function - look into this
 //initial props function in next
-
 function ExerciseNounPhrases() {
     const [picLink, setPicLink] = useState(myPics[Object.keys(myPics)[0]]);
-    let myLink = 'img' + counter;
+
     function nextPicClick() {
         if (counter < Object.keys(myPics).length) {
             setPicLink(myPics[Object.keys(myPics)[counter]]);
@@ -47,6 +46,7 @@ function ExerciseNounPhrases() {
                     alt="noun phrase exercise"
                     onClick={nextPicClick}
                 ></img>
+
                 <button
                     id="nextPicButton"
                     onClick={nextPicClick}

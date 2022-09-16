@@ -1,8 +1,8 @@
 {
-    "img1": "/assets/img/2TimeChampion.png",
-    "img2": "/assets/img/3CarGarage.jpg",
-    "img3": "/assets/img/3CourseMeal.jpg",
-    "img4": "/assets/img/3PieceBand.jpg",
-    "img5": "/assets/img/3PieceSuit.jpg",
-    "img6": "/assets/img/3StoryHouse.jpg"
+    "img1": "assets/img/2TimeChampion.png",
+    "img2": "assets/img/3CarGarage.jpg",
+    "img3": "assets/img/3CourseMeal.jpg",
+    "img4": "assets/img/3PieceBand.jpg",
+    "img5": "assets/img/3PieceSuit.jpg",
+    "img6": "assets/img/3StoryHouse.jpg"
 }
