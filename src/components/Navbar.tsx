@@ -10,7 +10,7 @@ export default function Navbar() {
             <nav
                 className={`sticky ${
                     scrollDirection === 'down' ? '-top-24' : 'top-0'
-                } flex flex-wrap items-center justify-between px-2 py-3 bg-blue-500 mb-3 transition-all duration-500`}
+                } flex flex-wrap items-center justify-between px-2 py-3 bg-blue-500  transition-all duration-500`}
             >
                 {/* navBar without useScrollDirection hook */}
                 {/* <nav className=" flex flex-wrap items-center justify-between px-2 py-3 bg-blue-500 mb-3 sticky top-0"> */}
