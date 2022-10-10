@@ -50,7 +50,7 @@ export default function Navbar() {
                     >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                             <Link className="nav-item" to="/">
-                                <a className="px-3 py-2 flex  text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                <a className="px-3 py-2 flex  text-xs bg-pink-300 rounded-full uppercase font-bold leading-snug text-white hover:opacity-75">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-5 w-5"
