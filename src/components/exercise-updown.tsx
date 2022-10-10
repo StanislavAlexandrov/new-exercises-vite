@@ -38,7 +38,7 @@ export default function UpDown() {
                                 key={id}
                                 id={id.toString()}
                                 onClick={() => flipItem(id)}
-                                className="text-2xl m-2"
+                                className="text-2xl m-2 p-2 bg-blue-500 text-white rounded-full"
                             >
                                 {element.word}
                             </button>
@@ -56,7 +56,7 @@ export default function UpDown() {
                             <button
                                 key={id}
                                 id={id.toString()}
-                                className=" m-2    "
+                                className=" m-2  bg-pink-200 p-2 rounded-full "
                                 onClick={() => flipItem(id)}
                             >
                                 {element.word}
