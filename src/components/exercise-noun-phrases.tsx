@@ -39,7 +39,7 @@ function ExerciseNounPhrases() {
 
     return (
         <>
-            <div className="allPictures">
+            <div className="allPictures flex flex-col items-center justify-center h-screen">
                 <img
                     src={picLink}
                     className="pictureShown img-fluid mx-auto d-block rounded"

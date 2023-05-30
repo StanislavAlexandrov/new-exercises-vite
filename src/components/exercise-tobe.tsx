@@ -28,7 +28,7 @@ function ExerciseToBe() {
     };
 
     return (
-        <div className="exerciseToBe flex justify-center text-3xl ">
+        <div className="exerciseToBe flex justify-center text-3xl items-center h-screen">
             <div>
                 {count < questionListToBe.length ? null : (
                     <button onClick={restartTimer}>Start</button>
