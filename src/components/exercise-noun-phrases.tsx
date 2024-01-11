@@ -42,7 +42,7 @@ function ExerciseNounPhrases() {
             <div className="allPictures flex flex-col items-center justify-center h-screen">
                 <img
                     src={picLink}
-                    className="pictureShown img-fluid mx-auto d-block rounded"
+                    className="cursor-pointer pictureShown img-fluid mx-auto d-block rounded"
                     alt="noun phrase exercise"
                     onClick={nextPicClick}
                 ></img>
