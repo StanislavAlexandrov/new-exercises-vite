@@ -78,7 +78,7 @@ export default function TypedQuestions() {
         // Reset revealed letters and timer when question changes
         setRevealedLetters(currentWord[0]);
         setTimer(0);
-    }, [currentWord]);
+    }, [currentWord, correctGuess]);
 
     useEffect(() => {
         // Timer functionality
