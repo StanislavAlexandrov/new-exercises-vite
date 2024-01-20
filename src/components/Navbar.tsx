@@ -94,6 +94,11 @@ export default function Navbar() {
                                     UP DOWN
                                 </a>
                             </Link>
+                            <Link to="text">
+                                <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    TEXT
+                                </a>
+                            </Link>
                         </ul>
                     </div>
                 </div>
