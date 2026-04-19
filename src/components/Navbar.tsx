@@ -1,7 +1,18 @@
-import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useScrollDirection from './custom-hooks/use-scroll-direction';
+
+const navLinks = [
+    ['/', 'Home'],
+    ['/articles', 'Articles'],
+    ['/tobe', 'To Be'],
+    ['/nounphrases', 'Noun Phrases'],
+    ['/tvshows', 'TV Shows'],
+    ['/typedquestions', 'Typed Questions'],
+    ['/updown', 'Up Down'],
+    ['/text', 'Text'],
+] as const;
+
 export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
     const scrollDirection = useScrollDirection();
@@ -20,8 +31,9 @@ export default function Navbar() {
                             className="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-sm font-semibold uppercase tracking-[0.12em] text-brand-700"
                             to="/"
                         >
-                            href="#exercises" Tailwind Exercises
+                            Tailwind Exercises
                         </Link>
+
                         <button
                             className="rounded-full border border-slate-200 bg-white p-2 text-slate-700 shadow-sm lg:hidden"
                             type="button"
@@ -48,62 +60,28 @@ export default function Navbar() {
                         }
                         id="example-navbar-danger"
                     >
-                        <ul className="flex flex-col gap-2 pt-4 lg:ml-auto lg:flex-row lg:items-center lg:gap-1 lg:pt-0">
-                            <Link className="nav-item" to="/">
-                                <ul className="flex flex-col gap-2 pt-4 lg:ml-auto lg:flex-row lg:items-center lg:gap-1 lg:pt-0">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
+                        <ul
+                            className={`w-full flex-col gap-2 pt-4 ${
+                                navbarOpen ? 'flex' : 'hidden'
+                            } lg:ml-auto lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-1 lg:pt-0`}
+                        >
+                            {navLinks.map(([to, label]) => (
+                                <li key={to}>
+                                    <NavLink
+                                        to={to}
+                                        end={to === '/'}
+                                        className={({ isActive }) =>
+                                            `inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition ${
+                                                isActive
+                                                    ? 'bg-brand-600 text-white shadow-sm'
+                                                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                                            }`
+                                        }
                                     >
-                                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                                    </svg>{' '}
-                                    HOME
-                                </ul>
-                            </Link>
-                            <Link
-                                to="articles"
-                                className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm"
-                            >
-                                ARTICLES
-                            </Link>
-                            <Link
-                                to="tobe"
-                                className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                            >
-                                TOBE
-                            </Link>
-                            <Link
-                                to="nounphrases"
-                                className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                            >
-                                NOUN PHRASES
-                            </Link>
-                            <Link
-                                to="tvshows"
-                                className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                            >
-                                TV SHOWS
-                            </Link>
-                            <Link
-                                to="typedquestions"
-                                className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                            >
-                                TYPED QUESTIONS
-                            </Link>
-                            <Link
-                                to="updown"
-                                className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                            >
-                                UP DOWN
-                            </Link>
-                            <Link
-                                to="text"
-                                className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                            >
-                                TEXT
-                            </Link>
+                                        {label}
+                                    </NavLink>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>

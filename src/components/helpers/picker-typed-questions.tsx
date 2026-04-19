@@ -26,26 +26,22 @@ const Picker = ({
 
     //question prop inside the component; an array of numbers and map through them - DONE
     return (
-        <>
-            <h2 className="mt-8 text-2xl font-bold">How many questions?</h2>
-            {questionPickerArray.map((element, index) => (
-                <button
-                    className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8"
-                    onClick={() => handleSelectedByNumber(element)}
-                    key={index}
-                >
-                    {element}
-                </button>
-            ))}
-
-            {/* remove below */}
-
-            {/* <button onClick={() => handleSelectedByNumber(2)}>2</button>
-        <button onClick={() => handleSelectedByNumber(5)}>5</button>
-        <button onClick={() => handleSelectedByNumber(10)}>10</button>
-        <button onClick={() => handleSelectedByNumber(15)}>15</button>
-        <button onClick={() => handleSelectedByNumber(20)}>20</button> */}
-        </>
+        <div className="flex w-full flex-col items-center text-center">
+            <h2 className="text-2xl font-bold text-slate-900">
+                How many questions?
+            </h2>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+                {questionPickerArray.map((element, index) => (
+                    <button
+                        className="rounded-xl border border-brand-300 bg-white px-4 py-2 font-semibold text-brand-700 transition hover:border-brand-600 hover:bg-brand-600 hover:text-white"
+                        onClick={() => handleSelectedByNumber(element)}
+                        key={index}
+                    >
+                        {element}
+                    </button>
+                ))}
+            </div>
+        </div>
     );
 };
 
