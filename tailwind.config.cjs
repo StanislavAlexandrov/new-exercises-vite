@@ -3,6 +3,23 @@ module.exports = {
     content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
     theme: {
         extend: {
+            colors: {
+                canvas: '#f8fafc',
+                surface: '#ffffff',
+                ink: '#0f172a',
+                muted: '#475569',
+                brand: {
+                    50: '#eff6ff',
+                    100: '#dbeafe',
+                    200: '#bfdbfe',
+                    600: '#2563eb',
+                    700: '#1d4ed8',
+                },
+            },
+            boxShadow: {
+                card: '0 18px 45px rgba(15, 23, 42, 0.08)',
+            },
+
             animation: {
                 blob: 'blob 7s infinite ease',
             },

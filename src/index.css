@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply bg-canvas text-ink antialiased;
+    }
+
+    ::selection {
+        @apply bg-brand-100 text-brand-700;
+    }
+}
+
 @layer utilities {
     .animation-delay-2000 {
         animation-delay: 2s;

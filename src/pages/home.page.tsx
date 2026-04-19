@@ -1,50 +1,80 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+const exercises = [
+    {
+        to: 'articles',
+        title: 'Articles',
+        desc: 'Spot and remove articles in sentences.',
+    },
+    {
+        to: 'tobe',
+        title: 'To Be',
+        desc: 'Quick drills with be-verb questions and answers.',
+    },
+    {
+        to: 'nounphrases',
+        title: 'Noun Phrases',
+        desc: 'Image-based prompts for speaking practice.',
+    },
+    {
+        to: 'tvshows',
+        title: 'TV Shows',
+        desc: 'Browse shows and react to visual prompts.',
+    },
+    {
+        to: 'typedquestions',
+        title: 'Typed Questions',
+        desc: 'Type vocabulary answers with hints.',
+    },
+    {
+        to: 'updown',
+        title: 'Up Down',
+        desc: 'Move words between zones as a quick memory game.',
+    },
+    {
+        to: 'text',
+        title: 'Text',
+        desc: 'Read a passage with hover translations.',
+    },
+];
 
 const HomePage = () => {
     const blockStyle =
-        'border-solid border-2 p-5 bg-white rounded-lg flex justify-center relative';
+        'group flex min-h-[180px] flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card';
 
     return (
-        <div className="">
-            <div className="bg-gray-100 min-h-screen flex items-center justify-center px-16">
-                <div className="w-full max-w-md relative">
-                    <div className="absolute top-0 -left-2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                    <div className="absolute top-0 -right-2 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                    <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-                    <Link to="articles" className={blockStyle}>
-                        <a className=" px-3 py-2  items-center text-xs uppercase font-bold leading-snug  hover:opacity-75 ">
-                            ARTICLES
-                        </a>
-                    </Link>
-                    <Link to="tobe" className={blockStyle}>
-                        <a className=" px-3 py-2  items-center text-xs uppercase font-bold leading-snug  hover:opacity-75">
-                            TOBE
-                        </a>
-                    </Link>
-                    <Link to="nounphrases" className={blockStyle}>
-                        <a className="px-3 py-2  items-center text-xs uppercase font-bold leading-snug  hover:opacity-75">
-                            NOUN PHRASES
-                        </a>
-                    </Link>
-                    <Link to="tvshows" className={blockStyle}>
-                        <a className="px-3 py-2  items-center text-xs uppercase font-bold leading-snug  hover:opacity-75">
-                            TV SHOWS
-                        </a>
-                    </Link>
-                    <Link to="typedquestions" className={blockStyle}>
-                        <a className="px-3 py-2  items-center text-xs uppercase font-bold leading-snug  hover:opacity-75">
-                            TYPED QUESTIONS
-                        </a>
-                    </Link>
-                    <Link to="updown" className={blockStyle}>
-                        <a className="px-3 py-2  items-center text-xs uppercase font-bold leading-snug  hover:opacity-75">
-                            UP DOWN
-                        </a>
-                    </Link>
+        <main className="min-h-[calc(100vh-72px)] bg-canvas">
+            <section className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+                <div className="max-w-2xl text-left">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
+                        Something something exercises
+                    </p>
+                    <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+                        Speaking, grammar, and vocabulary exercises
+                    </h1>
+                    <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
+                        Choose an exercise and jump in.
+                    </p>
                 </div>
-            </div>
-        </div>
+
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                    {exercises.map((exercise) => (
+                        <Link
+                            key={exercise.to}
+                            to={exercise.to}
+                            className={blockStyle}
+                        >
+                            <span className="text-lg font-semibold text-slate-900">
+                                {exercise.title}
+                            </span>
+                            <span className="mt-2 text-sm leading-6 text-slate-600">
+                                {exercise.desc}
+                            </span>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+        </main>
     );
 };
 
